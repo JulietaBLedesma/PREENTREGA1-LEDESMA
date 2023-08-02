@@ -1,25 +1,37 @@
 import React from "react";
 import CartWidgets from "../CartWidgets/index"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-const Navbar = () => {
+const Barra = () => {
   return (
-    <div className="Navbar1">
-        <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">KiraStore</button>
-        <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div className="offcanvas-header">
-        <button className="categoria" type="button" id="remeras" href="#">Remeras</button>
-        <button className="categoria" type="button" id="vestidos"  href="#">Vestidos</button>
-        <button className="categoria" type="button" id="pantalones"  href="#">Pantalones</button>
-        <button className="categoria" type="button" id="pantalones"  href="#"><CartWidgets/></button>
-        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-     <div className="offcanvas-body">
-      <p>Try scrolling the rest of the page to see this option in action.</p>
-      </div>
-</div>
-    </div>
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container>
+      <Navbar.Brand href="#home">KiraStore</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <NavDropdown title="Productos" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Remeras</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Pantalones</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Vestidos</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              Todos los productos
+            </NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link href="#link"><CartWidgets/></Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
   );
 }
 
-export default Navbar;
+export default Barra;
+
+

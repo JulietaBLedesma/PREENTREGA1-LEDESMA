@@ -1,12 +1,14 @@
 import React from "react";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 const CartWidgets = () => {
-    const carrito = 3
+    const {cartQuantity} = useContext (CartContext)
 
  return (
     <>
-    <i class="bi bi-cart4"></i>
-    <span className="numCarrito">{carrito}</span>
+    <i class="bi bi-cart4" color="black"></i>
+    {cartQuantity () > 0 && <span className="numCarrito">{cartQuantity()}</span>}
     </>
  )
 

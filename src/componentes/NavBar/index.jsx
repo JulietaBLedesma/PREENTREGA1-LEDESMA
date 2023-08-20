@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import  {NavLink} from 'react-router-dom';
 
 
+
 const Barra = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -25,7 +26,7 @@ const Barra = () => {
               Todos los productos
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="#link"><CartWidgets/></Nav.Link>
+          <NavLink style={{textDecoration: 'none'}} to='/cart'><CartWidgets/></NavLink>
         </Nav>
       </Navbar.Collapse>
     </Container>
